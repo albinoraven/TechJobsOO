@@ -45,8 +45,9 @@ namespace TechJobs.Controllers
                     CoreCompetency = jobData.CoreCompetencies.Find(newJobViewModel.CoreCompetencyID),
                 };
                 jobData.Jobs.Add(newJob);
-
-                return View("Index", newJob);
+                
+                return Redirect(string.Format("/Job?id={0}", newJob.ID));
+                
             }
             
             return View(newJobViewModel);
